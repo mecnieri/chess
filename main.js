@@ -1,6 +1,6 @@
-import { createboard } from './createbord.js'
+import { createboardWithFigures } from './createbord.js'
 
-createboard()
+createboardWithFigures()
 
 document.addEventListener('click', getBoxId)
 
