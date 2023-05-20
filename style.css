@@ -1,0 +1,32 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+section {
+  margin: 2px;
+  width: 600px;
+  height: 600px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+ }
+
+section > div {
+  width: 75px;
+  height: 75px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.blackbox {
+  background-color: grey;
+}
+
+i {
+ font-size: 50px;
+ 
+}
