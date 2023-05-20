@@ -10,7 +10,7 @@ let figures = {
 function coloringBoxes() {
   for (let i = 0; i < 8; i++) {
     for (let j = 0; j < 8; j++) {
-      if ((i % 2 === 0 && j % 2 === 0) || (i % 2 === 1 && j % 2 === 1)) {
+      if ((i % 2 === 0 && j % 2 === 1) || (i % 2 === 1 && j % 2 === 0)) {
         boxes[i * 8 + j].classList.add('blackbox')
       }
     }

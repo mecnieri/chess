@@ -10,16 +10,16 @@ section {
   height: 600px;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
- }
+  border: 1px solid black;
+  box-sizing: content-box;
+}
 
 section > div {
   width: 75px;
   height: 75px;
-  border: 1px solid black;
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 
 .blackbox {
@@ -27,6 +27,5 @@ section > div {
 }
 
 i {
- font-size: 50px;
- 
+  font-size: 50px;
 }
