@@ -1,11 +1,9 @@
+import { figures } from './figures.js'
+
 let boxes = Array.from(document.querySelector('section').children)
 let row = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
 
 let boxesArray = []
-let figures = {
-  WPawn: '<i class="fa-sharp fa-regular fa-chess-pawn"></i>',
-  BPawn: '<i class="fa-solid fa-chess-pawn"></i>',
-}
 
 function coloringBoxes() {
   for (let i = 0; i < 8; i++) {
@@ -51,10 +49,4 @@ export function createboard() {
   coloringBoxes()
   addIdsAndPushBoxesArray()
   startingPosition()
-}
-
-document.addEventListener('click', getBoxId)
-
-function getBoxId(e) {
-  console.log(e.target.id)
 }
