@@ -20,38 +20,54 @@ function addIdsAndPushBoxesArray() {
     for (let j = 8; j >= 1; j--) {
       let box = boxes[i * 8 + j - 1];
       box.id = row[j - 1] + (8 - i);
-      boxesArray.push({ coordinate: row[i] + (8 - j + 1), figure: "" });
+      boxesArray.push({ coordinate: row[i] + (8 - j + 1), figure: "" }
+      );
     }
   }
+  console.log(Object.values(figures)[0]);
 }
 
 function startingPosition() {
-  insertFigureByCoordinate("A2", "WPawn");
-  insertFigureByCoordinate("B2", "WPawn");
-  insertFigureByCoordinate("C2", "WPawn");
-  insertFigureByCoordinate("D2", "WPawn");
-  insertFigureByCoordinate("E2", "WPawn");
-  insertFigureByCoordinate("F2", "WPawn");
-  insertFigureByCoordinate("G2", "WPawn");
-  insertFigureByCoordinate("H2", "WPawn");
-  insertFigureByCoordinate("A7", "BPawn");
-  insertFigureByCoordinate("B7", "BPawn");
-  insertFigureByCoordinate("C7", "BPawn");
-  insertFigureByCoordinate("D7", "BPawn");
-  insertFigureByCoordinate("E7", "BPawn");
-  insertFigureByCoordinate("F7", "BPawn");
-  insertFigureByCoordinate("G7", "BPawn");
-  insertFigureByCoordinate("H7", "BPawn");
-  insertFigureByCoordinate("D1", "WQueen");
-  insertFigureByCoordinate("E1", "WKing");
-  insertFigureByCoordinate("C1", "WBishop")
-  insertFigureByCoordinate("F1", "WBishop")
-  insertFigureByCoordinate("B1", "WKnight")
-  insertFigureByCoordinate("G1", "WKnight")
-  insertFigureByCoordinate("A1", "WRook")
-  insertFigureByCoordinate("H1", "WRook")
-  insertFigureByCoordinate("A8", "BRook")
-  insertFigureByCoordinate("H8", "BRook")
+  // insertFigureByCoordinate("A2", "WPawn");
+  // insertFigureByCoordinate("B2", "WPawn");
+  // insertFigureByCoordinate("C2", "WPawn");
+  // insertFigureByCoordinate("D2", "WPawn");
+  // insertFigureByCoordinate("E2", "WPawn");
+  // insertFigureByCoordinate("F2", "WPawn");
+  // insertFigureByCoordinate("G2", "WPawn");
+  // insertFigureByCoordinate("H2", "WPawn");
+  // insertFigureByCoordinate("A7", "BPawn");
+  // insertFigureByCoordinate("B7", "BPawn");
+  // insertFigureByCoordinate("C7", "BPawn");
+  // insertFigureByCoordinate("D7", "BPawn");
+  // insertFigureByCoordinate("E7", "BPawn");
+  // insertFigureByCoordinate("F7", "BPawn");
+  // insertFigureByCoordinate("G7", "BPawn");
+  // insertFigureByCoordinate("H7", "BPawn");
+  // insertFigureByCoordinate("D1", "WQueen");
+  // insertFigureByCoordinate("E1", "WKing");
+  // insertFigureByCoordinate("C1", "WBishop");
+  // insertFigureByCoordinate("F1", "WBishop");
+  // insertFigureByCoordinate("B1", "WKnight");
+  // insertFigureByCoordinate("G1", "WKnight");
+  // insertFigureByCoordinate("A1", "WRook");
+  // insertFigureByCoordinate("H1", "WRook");
+  // insertFigureByCoordinate("A8", "BRook");
+  // insertFigureByCoordinate("H8", "BRook");
+  // insertFigureByCoordinate("B8", "BKnight")
+  // insertFigureByCoordinate("G8", "BKnight");
+  // insertFigureByCoordinate("C8", "BBishop");
+  // insertFigureByCoordinate("F8", "BBishop");
+  // insertFigureByCoordinate("D8", "BQueen");
+  // insertFigureByCoordinate("E8", "BKing")
+
+  
+  for (let i = 0; i < 64; i++){
+    insertFigureByCoordinate(boxesArray[i].coordinate, "WKing");
+    
+    
+  }
+  
   
 
 
