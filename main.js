@@ -4,6 +4,8 @@ import {
   leftDirection,
   rightDirection,
   upDirection,
+  upRightDirection,
+  upLeftDirection
 } from './moving.js'
 
 createboardWithFigures()
@@ -21,6 +23,9 @@ function getBoxId(e) {
     possibles.push(...downDirection(id, 'wRook'))
     possibles.push(...leftDirection(id, 'wRook'))
     possibles.push(...rightDirection(id, 'wRook'))
+    possibles.push(...upRightDirection(id,'wRook'))
+    possibles.push(...upLeftDirection(id,'wRook'))
+
     possibles.forEach(square => {
       let div = document.getElementById(square)
       let circle = div.children[0]
