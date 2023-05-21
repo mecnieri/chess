@@ -1,36 +1,41 @@
-import { createboardWithFigures } from './board.js'
+import { createboardWithFigures } from "./board.js";
 import {
   downDirection,
   leftDirection,
   rightDirection,
   upDirection,
+  upLeftDirection,
   upRightDirection,
-  upLeftDirection
-} from './moving.js'
+  downRightDirection,
+  downLeftDirection
+} from "./moving.js";
 
-createboardWithFigures()
+createboardWithFigures();
 
-document.querySelector('section').addEventListener('click', getBoxId)
+document.querySelector("section").addEventListener("click", getBoxId);
 
 function getBoxId(e) {
-  let id = e.target.id
-  let div = document.getElementById(id)
+  let id = e.target.id;
+  let div = document.getElementById(id);
 
   if (div.children.length === 2) {
-    div.classList.add('selectedBox')
-    let possibles = []
-    possibles.push(...upDirection(id, 'wRook'))
-    possibles.push(...downDirection(id, 'wRook'))
-    possibles.push(...leftDirection(id, 'wRook'))
-    possibles.push(...rightDirection(id, 'wRook'))
-    possibles.push(...upRightDirection(id,'wRook'))
-    possibles.push(...upLeftDirection(id,'wRook'))
-
-    possibles.forEach(square => {
-      let div = document.getElementById(square)
-      let circle = div.children[0]
-      circle.style = 'display:block'
-    })
-    console.log(possibles)
+    div.classList.add("selectedBox");
+    let possibles = [];
+    possibles.push(
+      ...upDirection(id, "wRook"),
+      ...downDirection(id, "wRook"),
+      ...leftDirection(id, "wRook"),
+      ...rightDirection(id, "wRook"),
+      ...upRightDirection(id,"wRook"),
+      ...upLeftDirection(id,"wRook"),
+      ...downRightDirection(id,"wRook"),
+      ...downLeftDirection(id,"wRook")
+    );
+    possibles.forEach((square) => {
+      let div = document.getElementById(square);
+      let circle = div.children[0];
+      circle.style = "display:block";
+    });
+    console.log(possibles);
   }
 }

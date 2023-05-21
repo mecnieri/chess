@@ -1,8 +1,5 @@
 // directions
 
-// right
-// left
-
 // up right
 // down right
 // down left
@@ -107,6 +104,34 @@ export function upLeftDirection(startingPosition, figure) {
   checkNext(startingPosition, figure)
   return possiblesUp
 }
+export function downRightDirection(startingPosition, figure) {
+  let possiblesUp = []
+  function checkNext(currentPosition, figure) {
+    let nextSquare = down(right(currentPosition, figure), figure);
+    console.log(nextSquare)
+    // if (isOnBoard(nextSquare) && isNotFriend(nextSquare)) {
+    if (isOnBoard(nextSquare)) {
+      possiblesUp.push(nextSquare)
+      checkNext(nextSquare, figure)
+    }
+  }
+  checkNext(startingPosition, figure)
+  return possiblesUp
+}
+export function downLeftDirection(startingPosition, figure) {
+  let possiblesUp = []
+  function checkNext(currentPosition, figure) {
+    let nextSquare = down(left(currentPosition, figure), figure);
+    console.log(nextSquare)
+    // if (isOnBoard(nextSquare) && isNotFriend(nextSquare)) {
+    if (isOnBoard(nextSquare)) {
+      possiblesUp.push(nextSquare)
+      checkNext(nextSquare, figure)
+    }
+  }
+  checkNext(startingPosition, figure)
+  return possiblesUp
+}
 
 
 
@@ -127,6 +152,7 @@ function left(currentPosition, figure) {
   // console.log(left)
   return left + currentPosition[1]
 }
+
 function right(currentPosition, figure) {
   let right = row[row.findIndex(el => el === currentPosition[0]) + 1]
   // console.log(right)
