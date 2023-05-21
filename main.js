@@ -6,9 +6,7 @@ createboardWithFigures()
 document.querySelector('section').addEventListener('click', getBoxId)
 
 function getBoxId(e) {
-  document
-    .querySelectorAll('span')
-    .forEach(circle => (circle.style = 'display:none'))
+  clearSelected()
 
   let id = e.target.id
   let div = document.getElementById(id)
@@ -34,4 +32,13 @@ function getBoxId(e) {
       }
     })
   }
+}
+function clearSelected() {
+  document
+    .querySelectorAll('span')
+    .forEach(circle => (circle.style = 'display:none'))
+
+  Array.from(document.querySelector('section').children).forEach(div =>
+    div.classList.remove('selectedBox'),
+  )
 }
