@@ -1,19 +1,28 @@
 import { insertFigureInBoxesArray } from './board.js'
+import Queen from './figureClasses/Queen.js'
+import Rook from './figureClasses/Rook.js'
+import Bishop from './figureClasses/Bishop.js'
+
+export const icons = {
+  WPawnIcon: '<i class="fa-sharp fa-regular fa-chess-pawn"></i>',
+  BPawnIcon: '<i class="fa-solid fa-chess-pawn"></i>',
+  WPawnIcon: '<i class="fa-sharp fa-regular fa-chess-pawn"></i>',
+  BRookIcon: '<i class="fa-solid fa-chess-rook"></i>',
+  WRookIcon: '<i class="fa-regular fa-chess-rook"></i>',
+  BKnightIcon: '<i class="fa-solid fa-chess-knight"></i>',
+  WKnightIcon: '<i class="fa-regular fa-chess-knight"></i>',
+  BBishopIcon: '<i class="fa-solid fa-chess-bishop"></i>',
+  WBishopIcon: '<i class="fa-regular fa-chess-bishop"></i>',
+  BQueenIcon: '<i class="fa-solid fa-chess-queen"></i>',
+  WQueenIcon: '<i class="fa-regular fa-chess-queen"></i>',
+  BKingIcon: '<i class="fa-solid fa-chess-king"></i>',
+  WKingIcon: '<i class="fa-regular fa-chess-king"></i>',
+}
 
 export const figures = {
-  WPawn: '<i class="fa-sharp fa-regular fa-chess-pawn"></i>',
-  BPawn: '<i class="fa-solid fa-chess-pawn"></i>',
-  WPawn: '<i class="fa-sharp fa-regular fa-chess-pawn"></i>',
-  BRook: '<i class="fa-solid fa-chess-rook"></i>',
-  WRook: '<i class="fa-regular fa-chess-rook"></i>',
-  BKnight: '<i class="fa-solid fa-chess-knight"></i>',
-  WKnight: '<i class="fa-regular fa-chess-knight"></i>',
-  BBishop: '<i class="fa-solid fa-chess-bishop"></i>',
-  WBishop: '<i class="fa-regular fa-chess-bishop"></i>',
-  BQueen: '<i class="fa-solid fa-chess-queen"></i>',
-  WQueen: '<i class="fa-regular fa-chess-queen"></i>',
-  BKing: '<i class="fa-solid fa-chess-king"></i>',
-  WKing: '<i class="fa-regular fa-chess-king"></i>',
+  wQueen: new Queen(icons.WQueenIcon, 'w'),
+  wRook: new Rook(icons.WRookIcon, 'w'),
+  bBishop: new Bishop(icons.BBishopIcon, 'b'),
 }
 
 // export const startingFigures = [
@@ -54,8 +63,10 @@ export const figures = {
 // ]
 
 export const startingFigures = [
-  { coordinate: 'E5', figure: 'WRook' },
-  { coordinate: 'C2', figure: 'WRook' },
+  { coordinate: 'E5', figure: figures.wRook },
+  { coordinate: 'C2', figure: figures.wRook },
+  { coordinate: 'H4', figure: figures.wQueen },
+  { coordinate: 'B7', figure: figures.bBishop },
 ]
 
 function insertFigureByCoordinate(coordinate, figure) {
@@ -64,7 +75,8 @@ function insertFigureByCoordinate(coordinate, figure) {
 }
 
 function insertFigureOnBoard(coordinate, figure) {
-  document.getElementById(coordinate).innerHTML += figures[figure]
+  console.log(figure)
+  document.getElementById(coordinate).innerHTML += figure.icon
 }
 
 export function figuresStartingPosition() {

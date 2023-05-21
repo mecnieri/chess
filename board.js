@@ -2,7 +2,7 @@ import { figuresStartingPosition } from './figures.js'
 
 const rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
 
-let boxesArray = []
+export let boxesArray = []
 
 function createboard() {
   for (let i = 0; i < 8; i++) {
@@ -30,5 +30,5 @@ export const insertFigureInBoxesArray = (coordinate, figure) => {
 export function createboardWithFigures() {
   createboard()
   figuresStartingPosition()
-  // console.log(boxesArray)
+  console.log(boxesArray)
 }
