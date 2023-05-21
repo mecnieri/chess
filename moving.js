@@ -113,61 +113,61 @@ export function downLeftDirection(startingPosition, figure) {
   return possiblesUp
 }
 
-export function horseDirections(startingPosition, figure) {
+export function knightDirections(startingPosition, figure) {
   return [
-    horseUpRight(startingPosition, figure),
-    horseUpLeft(startingPosition, figure),
-    horseRightUp(startingPosition, figure),
-    horseRightDown(startingPosition, figure),
-    horseDownRight(startingPosition, figure),
-    horseLeftUp(startingPosition, figure),
-    horseLeftDown(startingPosition, figure),
-    horseDownLeft(startingPosition, figure),
+    knightUpRight(startingPosition, figure),
+    knightUpLeft(startingPosition, figure),
+    knightRightUp(startingPosition, figure),
+    knightRightDown(startingPosition, figure),
+    knightDownRight(startingPosition, figure),
+    knightLeftUp(startingPosition, figure),
+    knightLeftDown(startingPosition, figure),
+    knightDownLeft(startingPosition, figure),
   ]
 }
-function horseUpRight(startingPosition, figure) {
+function knightUpRight(startingPosition, figure) {
   let nextSquare = up(up(right(startingPosition, figure), figure), figure)
   if (isOnBoard(nextSquare)) {
     return nextSquare
   }
 }
-function horseUpLeft(startingPosition, figure) {
+function knightUpLeft(startingPosition, figure) {
   let nextSquare = up(up(left(startingPosition, figure), figure), figure)
   if (isOnBoard(nextSquare)) {
     return nextSquare
   }
 }
-function horseRightUp(startingPosition, figure) {
+function knightRightUp(startingPosition, figure) {
   let nextSquare = right(right(up(startingPosition, figure), figure), figure)
   if (isOnBoard(nextSquare)) {
     return nextSquare
   }
 }
-function horseRightDown(startingPosition, figure) {
+function knightRightDown(startingPosition, figure) {
   let nextSquare = right(right(down(startingPosition, figure), figure), figure)
   if (isOnBoard(nextSquare)) {
     return nextSquare
   }
 }
-function horseDownRight(startingPosition, figure) {
+function knightDownRight(startingPosition, figure) {
   let nextSquare = down(down(right(startingPosition, figure), figure), figure)
   if (isOnBoard(nextSquare)) {
     return nextSquare
   }
 }
-function horseDownLeft(startingPosition, figure) {
+function knightDownLeft(startingPosition, figure) {
   let nextSquare = down(down(left(startingPosition, figure), figure), figure)
   if (isOnBoard(nextSquare)) {
     return nextSquare
   }
 }
-function horseLeftUp(startingPosition, figure) {
+function knightLeftUp(startingPosition, figure) {
   let nextSquare = left(left(up(startingPosition, figure), figure), figure)
   if (isOnBoard(nextSquare)) {
     return nextSquare
   }
 }
-function horseLeftDown(startingPosition, figure) {
+function knightLeftDown(startingPosition, figure) {
   let nextSquare = left(left(down(startingPosition, figure), figure), figure)
   if (isOnBoard(nextSquare)) {
     return nextSquare
