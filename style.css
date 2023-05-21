@@ -30,3 +30,25 @@ i {
   font-size: 50px;
   pointer-events: none;
 }
+
+.selectedBox {
+  background-color: palegoldenrod;
+}
+
+.posibleSquare {
+  background-color: palegoldenrod;
+}
+
+section > div > span {
+  position: absolute;
+  display: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 75px;
+  opacity: 0.5;
+  background-color: rebeccapurple;
+  -webkit-border-radius: 75px;
+  -moz-border-radius: 75px;
+  -ms-border-radius: 75px;
+  -o-border-radius: 75px;
+}
