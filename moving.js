@@ -1,8 +1,5 @@
 // directions
 
-// right
-// left
-
 // up right
 // down right
 // down left
@@ -95,6 +92,7 @@ function left(currentPosition, figure) {
   console.log(left)
   return left + currentPosition[1]
 }
+
 function right(currentPosition, figure) {
   let right = row[row.findIndex(el => el === currentPosition[0]) + 1]
   console.log(right)

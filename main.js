@@ -17,10 +17,12 @@ function getBoxId(e) {
   if (div.children.length === 2) {
     div.classList.add('selectedBox')
     let possibles = []
-    possibles.push(...upDirection(id, 'wRook'))
-    possibles.push(...downDirection(id, 'wRook'))
-    possibles.push(...leftDirection(id, 'wRook'))
-    possibles.push(...rightDirection(id, 'wRook'))
+    possibles.push(
+      ...upDirection(id, 'wRook'),
+      ...downDirection(id, 'wRook'),
+      ...leftDirection(id, 'wRook'),
+      ...rightDirection(id, 'wRook'),
+    )
     possibles.forEach(square => {
       let div = document.getElementById(square)
       let circle = div.children[0]
