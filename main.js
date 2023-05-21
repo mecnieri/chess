@@ -1,8 +1,8 @@
-import { createboardWithFigures } from './createbord.js'
+import { createboardWithFigures } from './board.js'
 
 createboardWithFigures()
 
-document.addEventListener('click', getBoxId)
+document.querySelector('section').addEventListener('click', getBoxId)
 
 function getBoxId(e) {
   console.log(e.target.id)
