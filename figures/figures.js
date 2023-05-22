@@ -1,9 +1,9 @@
-import { insertFigureInBoxesArray } from './board.js'
-import Queen from './figures/Queen.js'
-import Rook from './figures/Rook.js'
-import Bishop from './figures/Bishop.js'
-import Knight from './figures/Knight.js'
-import { icons } from './figures/icons.js'
+import { insertFigureInBoxesArray } from '../board.js'
+import Queen from './classes/Queen.js'
+import Rook from './classes/Rook.js'
+import Bishop from './classes/Bishop.js'
+import Knight from './classes/Knight.js'
+import { icons } from './icons.js'
 
 export const figures = {
   wQueen: new Queen(icons.WQueenIcon, 'w'),
@@ -26,7 +26,6 @@ function insertFigureByCoordinate(coordinate, figure) {
 }
 
 function insertFigureOnBoard(coordinate, figure) {
-  console.log(figure)
   document.getElementById(coordinate).innerHTML += figure.icon
 }
 
@@ -38,4 +37,3 @@ export function figuresStartingPosition() {
     )
   }
 }
-

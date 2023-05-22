@@ -1,4 +1,4 @@
-import { figuresStartingPosition } from './figures.js'
+import { figuresStartingPosition } from './figures/figures.js'
 
 const rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
 
@@ -30,5 +30,4 @@ export const insertFigureInBoxesArray = (coordinate, figure) => {
 export function createboardWithFigures() {
   createboard()
   figuresStartingPosition()
-  console.log(boxesArray)
 }

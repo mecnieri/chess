@@ -2,27 +2,19 @@ import { createboardWithFigures } from './board.js'
 import { boxesArray } from './board.js'
 
 createboardWithFigures()
-
 document.querySelector('section').addEventListener('click', getBoxId)
 
 function getBoxId(e) {
   clearSelected()
 
-  let id = e.target.id
-  let div = document.getElementById(id)
-
-  function findFigure() {
-    return boxesArray.find(box => box.coordinate === id).figure
-  }
-
-  let figure = findFigure()
+  const id = e.target.id
+  const div = document.getElementById(id)
+  const figure = findFigure(id)
 
   if (div.children.length === 2) {
     div.classList.add('selectedBox')
-    let possibles = []
-    figure.directions.forEach(direction =>
-      possibles.push(...direction(id, figure.color)),
-    )
+
+    let possibles = figure.getPossibles(id)
 
     possibles.forEach(square => {
       if (square) {
@@ -33,6 +25,7 @@ function getBoxId(e) {
     })
   }
 }
+
 function clearSelected() {
   document
     .querySelectorAll('span')
@@ -42,3 +35,5 @@ function clearSelected() {
     div.classList.remove('selectedBox'),
   )
 }
+
+const findFigure = id => boxesArray.find(box => box.coordinate === id).figure
