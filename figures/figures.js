@@ -1,4 +1,4 @@
-import { insertFigureInBoxesArray } from '../board.js'
+import { insertFigureInBoxesArray, removeFigureInBoxesArray } from '../board.js'
 import Queen from './classes/Queen.js'
 import Rook from './classes/Rook.js'
 import Bishop from './classes/Bishop.js'
@@ -20,6 +20,11 @@ export const startingFigures = [
   { coordinate: 'E4', figure: figures.bKnight },
 ]
 
+export const moveFigure = (to, from, figure) => {
+  insertFigureByCoordinate(to, figure)
+  removeFigureByCoordinate(from, figure)
+}
+
 function insertFigureByCoordinate(coordinate, figure) {
   insertFigureInBoxesArray(coordinate, figure)
   insertFigureOnBoard(coordinate, figure)
@@ -27,6 +32,10 @@ function insertFigureByCoordinate(coordinate, figure) {
 
 function insertFigureOnBoard(coordinate, figure) {
   document.getElementById(coordinate).innerHTML += figure.icon
+}
+function removeFigureByCoordinate(coordinate) {
+  document.getElementById(coordinate).children[1].remove()
+  removeFigureInBoxesArray(coordinate)
 }
 
 export function figuresStartingPosition() {

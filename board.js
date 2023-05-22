@@ -20,7 +20,11 @@ function createboard() {
     }
   }
 }
-
+export const removeFigureInBoxesArray = (coordinate) => {
+  boxesArray.map(el =>
+    el.coordinate === coordinate ? (el.figure = '') : el,
+  )
+}
 export const insertFigureInBoxesArray = (coordinate, figure) => {
   boxesArray.map(el =>
     el.coordinate === coordinate ? (el.figure = figure) : el,

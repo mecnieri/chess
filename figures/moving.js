@@ -25,7 +25,6 @@ export class Movements {
     return this.checkNextRecursivly(startingPosition, dir, color)
   }
 
-
   knightUpRight = (startingPosition, figure) => {
     console.log(this)
     let nextSquare = this.up(
@@ -116,7 +115,6 @@ export class Movements {
     return left + currentPosition[1]
   }
   right = currentPosition => {
-    console.log(currentPosition)
     let right =
       this.row[this.row.findIndex(el => el === currentPosition[0]) + 1]
     return right + currentPosition[1]
