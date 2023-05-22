@@ -25,66 +25,78 @@ export class Movements {
     return this.checkNextRecursivly(startingPosition, dir, color)
   }
 
-  knightDirections(startingPosition, figure) {
-    return [
-      knightUpRight(startingPosition, figure),
-      knightUpLeft(startingPosition, figure),
-      knightRightUp(startingPosition, figure),
-      knightRightDown(startingPosition, figure),
-      knightDownRight(startingPosition, figure),
-      knightLeftUp(startingPosition, figure),
-      knightLeftDown(startingPosition, figure),
-      knightDownLeft(startingPosition, figure),
-    ]
-  }
-  knightUpRight(startingPosition, figure) {
-    let nextSquare = up(up(right(startingPosition, figure), figure), figure)
-    if (isOnBoard(nextSquare)) {
-      return nextSquare
-    }
-  }
-  knightUpLeft(startingPosition, figure) {
-    let nextSquare = up(up(left(startingPosition, figure), figure), figure)
-    if (isOnBoard(nextSquare)) {
-      return nextSquare
-    }
-  }
-  knightRightUp(startingPosition, figure) {
-    let nextSquare = right(right(up(startingPosition, figure), figure), figure)
-    if (isOnBoard(nextSquare)) {
-      return nextSquare
-    }
-  }
-  knightRightDown(startingPosition, figure) {
-    let nextSquare = right(
-      right(down(startingPosition, figure), figure),
+
+  knightUpRight = (startingPosition, figure) => {
+    console.log(this)
+    let nextSquare = this.up(
+      this.up(this.right(startingPosition, figure), figure),
       figure,
     )
-    if (isOnBoard(nextSquare)) {
+    if (this.isOnBoard(nextSquare)) {
       return nextSquare
     }
   }
-  knightDownRight(startingPosition, figure) {
-    let nextSquare = down(down(right(startingPosition, figure), figure), figure)
-    if (isOnBoard(nextSquare)) {
+  knightUpLeft = (startingPosition, figure) => {
+    let nextSquare = this.up(
+      this.up(this.left(startingPosition, figure), figure),
+      figure,
+    )
+    if (this.isOnBoard(nextSquare)) {
+      console.log(nextSquare)
       return nextSquare
     }
   }
-  knightDownLeft(startingPosition, figure) {
-    let nextSquare = down(down(left(startingPosition, figure), figure), figure)
-    if (isOnBoard(nextSquare)) {
+  knightRightUp = (startingPosition, figure) => {
+    let nextSquare = this.right(
+      this.right(this.up(startingPosition, figure), figure),
+      figure,
+    )
+    if (this.isOnBoard(nextSquare)) {
       return nextSquare
     }
   }
-  knightLeftUp(startingPosition, figure) {
-    let nextSquare = left(left(up(startingPosition, figure), figure), figure)
-    if (isOnBoard(nextSquare)) {
+  knightRightDown = (startingPosition, figure) => {
+    let nextSquare = this.right(
+      this.right(this.down(startingPosition, figure), figure),
+      figure,
+    )
+    if (this.isOnBoard(nextSquare)) {
       return nextSquare
     }
   }
-  knightLeftDown(startingPosition, figure) {
-    let nextSquare = left(left(down(startingPosition, figure), figure), figure)
-    if (isOnBoard(nextSquare)) {
+  knightDownRight = (startingPosition, figure) => {
+    let nextSquare = this.down(
+      this.down(this.right(startingPosition, figure), figure),
+      figure,
+    )
+    if (this.isOnBoard(nextSquare)) {
+      return nextSquare
+    }
+  }
+  knightDownLeft = (startingPosition, figure) => {
+    let nextSquare = this.down(
+      this.down(this.left(startingPosition, figure), figure),
+      figure,
+    )
+    if (this.isOnBoard(nextSquare)) {
+      return nextSquare
+    }
+  }
+  knightLeftUp = (startingPosition, figure) => {
+    let nextSquare = this.left(
+      this.left(this.up(startingPosition, figure), figure),
+      figure,
+    )
+    if (this.isOnBoard(nextSquare)) {
+      return nextSquare
+    }
+  }
+  knightLeftDown = (startingPosition, figure) => {
+    let nextSquare = this.left(
+      this.left(this.down(startingPosition, figure), figure),
+      figure,
+    )
+    if (this.isOnBoard(nextSquare)) {
       return nextSquare
     }
   }
@@ -104,6 +116,7 @@ export class Movements {
     return left + currentPosition[1]
   }
   right = currentPosition => {
+    console.log(currentPosition)
     let right =
       this.row[this.row.findIndex(el => el === currentPosition[0]) + 1]
     return right + currentPosition[1]
