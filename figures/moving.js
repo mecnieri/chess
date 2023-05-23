@@ -100,6 +100,55 @@ export class Movements {
     }
   }
 
+  kingUp = (startingPosition, figure) => {
+    let nextSquare = this.up(startingPosition, figure)
+    if (this.isOnBoard(nextSquare)) {
+      return nextSquare
+    }
+  }
+  kingDown = (startingPosition, figure) => {
+    let nextSquare = this.down(startingPosition, figure)
+    if (this.isOnBoard(nextSquare)) {
+      return nextSquare
+    }
+  }
+  kingLeft = (startingPosition, figure) => {
+    let nextSquare = this.left(startingPosition, figure)
+    if (this.isOnBoard(nextSquare)) {
+      return nextSquare
+    }
+  }
+  kingRight = (startingPosition, figure) => {
+    let nextSquare = this.right(startingPosition, figure)
+    if (this.isOnBoard(nextSquare)) {
+      return nextSquare
+    }
+  }
+  kingUpRight = (startingPosition, figure) => {
+    let nextSquare = this.up(this.right(startingPosition, figure), figure)
+    if (this.isOnBoard(nextSquare)) {
+      return nextSquare
+    }
+  }
+  kingUpLeft = (startingPosition, figure) => {
+    let nextSquare = this.up(this.left(startingPosition, figure), figure)
+    if (this.isOnBoard(nextSquare)) {
+      return nextSquare
+    }
+  }
+  kingDownRight = (startingPosition, figure) => {
+    let nextSquare = this.down(this.right(startingPosition, figure), figure)
+    if (this.isOnBoard(nextSquare)) {
+      return nextSquare
+    }
+  }
+  kingDownLeft = (startingPosition, figure) => {
+    let nextSquare = this.down(this.left(startingPosition, figure), figure)
+    if (this.isOnBoard(nextSquare)) {
+      return nextSquare
+    }
+  }
+
   up = (currentPosition, figure) => {
     return (
       currentPosition[0] + (+currentPosition[1] + (figure[0] === 'w' ? 1 : -1))
