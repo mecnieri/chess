@@ -133,51 +133,59 @@ export class Movements {
 
   kingUp = (startingPosition, figure) => {
     let nextSquare = this.up(startingPosition, figure)
-    if (this.isOnBoard(nextSquare)) {
-      return nextSquare
-    }
+    if (!this.isOnBoard(nextSquare)) return
+    let isF = this.isFigureOnWay(nextSquare, figure)
+    if (isF === 'friend') return
+    return nextSquare
   }
   kingDown = (startingPosition, figure) => {
     let nextSquare = this.down(startingPosition, figure)
-    if (this.isOnBoard(nextSquare)) {
-      return nextSquare
-    }
+    if (!this.isOnBoard(nextSquare)) return
+    let isF = this.isFigureOnWay(nextSquare, figure)
+    if (isF === 'friend') return
+    return nextSquare
   }
   kingLeft = (startingPosition, figure) => {
     let nextSquare = this.left(startingPosition, figure)
-    if (this.isOnBoard(nextSquare)) {
-      return nextSquare
-    }
+    if (!this.isOnBoard(nextSquare)) return
+    let isF = this.isFigureOnWay(nextSquare, figure)
+    if (isF === 'friend') return
+    return nextSquare
   }
   kingRight = (startingPosition, figure) => {
     let nextSquare = this.right(startingPosition, figure)
-    if (this.isOnBoard(nextSquare)) {
-      return nextSquare
-    }
+    if (!this.isOnBoard(nextSquare)) return
+    let isF = this.isFigureOnWay(nextSquare, figure)
+    if (isF === 'friend') return
+    return nextSquare
   }
   kingUpRight = (startingPosition, figure) => {
     let nextSquare = this.up(this.right(startingPosition, figure), figure)
-    if (this.isOnBoard(nextSquare)) {
-      return nextSquare
-    }
+    if (!this.isOnBoard(nextSquare)) return
+    let isF = this.isFigureOnWay(nextSquare, figure)
+    if (isF === 'friend') return
+    return nextSquare
   }
   kingUpLeft = (startingPosition, figure) => {
     let nextSquare = this.up(this.left(startingPosition, figure), figure)
-    if (this.isOnBoard(nextSquare)) {
-      return nextSquare
-    }
+    if (!this.isOnBoard(nextSquare)) return
+    let isF = this.isFigureOnWay(nextSquare, figure)
+    if (isF === 'friend') return
+    return nextSquare
   }
   kingDownRight = (startingPosition, figure) => {
     let nextSquare = this.down(this.right(startingPosition, figure), figure)
-    if (this.isOnBoard(nextSquare)) {
-      return nextSquare
-    }
+    if (!this.isOnBoard(nextSquare)) return
+    let isF = this.isFigureOnWay(nextSquare, figure)
+    if (isF === 'friend') return
+    return nextSquare
   }
   kingDownLeft = (startingPosition, figure) => {
     let nextSquare = this.down(this.left(startingPosition, figure), figure)
-    if (this.isOnBoard(nextSquare)) {
-      return nextSquare
-    }
+    if (!this.isOnBoard(nextSquare)) return
+    let isF = this.isFigureOnWay(nextSquare, figure)
+    if (isF === 'friend') return
+    return nextSquare
   }
 
   up = (currentPosition, figure) => {
