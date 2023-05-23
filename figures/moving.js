@@ -1,103 +1,134 @@
 // check next square:
 //  is there friend piece ?
 //  is there enemy piece ?
+import { findFigureInBoxesArray } from '../board.js'
 
 export class Movements {
   constructor() {
     this.row = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
     this.direction = this.direction.bind(this)
+    this.possibles = []
   }
 
   checkNextRecursivly = (currentPosition, func, color) => {
-    let possibles = []
-    const checkNext = (currentPosition, func, color) => {
-      let nextSquare = func(currentPosition, color)
-      if (this.isOnBoard(nextSquare, this.row)) {
-        possibles.push(nextSquare)
-        checkNext(nextSquare, func, color)
-      }
-    }
-    checkNext(currentPosition, func, color)
-    return possibles
+    this.possibles = []
+
+    this.checkNext(currentPosition, func, color)
+    return this.possibles
   }
 
-  direction = (startingPosition, dir, color) => {
-    return this.checkNextRecursivly(startingPosition, dir, color)
+  checkNext = (currentPosition, func, color) => {
+    let nextSquare = func(currentPosition, color)
+    if (!this.isOnBoard(nextSquare, this.row)) return
+    let isF = this.isFigureOnWay(nextSquare, color)
+    if (isF === 'friend') return
+    if (isF === 'enemy') return this.possibles.push(nextSquare)
+    if (!isF) {
+      this.possibles.push(nextSquare)
+      this.checkNext(nextSquare, func, color)
+    }
+  }
+
+  direction = (startingPosition, dir, color) =>
+    this.checkNextRecursivly(startingPosition, dir, color)
+
+  isFigureOnWay = (square, color) => {
+    console.log(square, color)
+    let fig = findFigureInBoxesArray(square).figure
+    if (fig) {
+      return fig.color === color ? 'friend' : 'enemy'
+    }
   }
 
   knightUpRight = (startingPosition, figure) => {
-    console.log(this)
+    console.log(figure)
     let nextSquare = this.up(
       this.up(this.right(startingPosition, figure), figure),
       figure,
     )
-    if (this.isOnBoard(nextSquare)) {
-      return nextSquare
-    }
+
+    if (!this.isOnBoard(nextSquare)) return
+    let isF = this.isFigureOnWay(nextSquare, figure)
+    if (isF === 'friend') return
+    return nextSquare
   }
   knightUpLeft = (startingPosition, figure) => {
     let nextSquare = this.up(
       this.up(this.left(startingPosition, figure), figure),
       figure,
     )
-    if (this.isOnBoard(nextSquare)) {
-      console.log(nextSquare)
-      return nextSquare
-    }
+
+    if (!this.isOnBoard(nextSquare)) return
+    let isF = this.isFigureOnWay(nextSquare, figure)
+    console.log(isF)
+    if (isF === 'friend') return
+    return nextSquare
   }
   knightRightUp = (startingPosition, figure) => {
     let nextSquare = this.right(
       this.right(this.up(startingPosition, figure), figure),
       figure,
     )
-    if (this.isOnBoard(nextSquare)) {
-      return nextSquare
-    }
+
+    if (!this.isOnBoard(nextSquare)) return
+    let isF = this.isFigureOnWay(nextSquare, figure)
+    if (isF === 'friend') return
+    return nextSquare
   }
   knightRightDown = (startingPosition, figure) => {
     let nextSquare = this.right(
       this.right(this.down(startingPosition, figure), figure),
       figure,
     )
-    if (this.isOnBoard(nextSquare)) {
-      return nextSquare
-    }
+
+    if (!this.isOnBoard(nextSquare)) return
+    let isF = this.isFigureOnWay(nextSquare, figure)
+    if (isF === 'friend') return
+    return nextSquare
   }
   knightDownRight = (startingPosition, figure) => {
     let nextSquare = this.down(
       this.down(this.right(startingPosition, figure), figure),
       figure,
     )
-    if (this.isOnBoard(nextSquare)) {
-      return nextSquare
-    }
+
+    if (!this.isOnBoard(nextSquare)) return
+    let isF = this.isFigureOnWay(nextSquare, figure)
+    if (isF === 'friend') return
+    return nextSquare
   }
   knightDownLeft = (startingPosition, figure) => {
     let nextSquare = this.down(
       this.down(this.left(startingPosition, figure), figure),
       figure,
     )
-    if (this.isOnBoard(nextSquare)) {
-      return nextSquare
-    }
+
+    if (!this.isOnBoard(nextSquare)) return
+    let isF = this.isFigureOnWay(nextSquare, figure)
+    if (isF === 'friend') return
+    return nextSquare
   }
   knightLeftUp = (startingPosition, figure) => {
     let nextSquare = this.left(
       this.left(this.up(startingPosition, figure), figure),
       figure,
     )
-    if (this.isOnBoard(nextSquare)) {
-      return nextSquare
-    }
+
+    if (!this.isOnBoard(nextSquare)) return
+    let isF = this.isFigureOnWay(nextSquare, figure)
+    if (isF === 'friend') return
+    return nextSquare
   }
   knightLeftDown = (startingPosition, figure) => {
     let nextSquare = this.left(
       this.left(this.down(startingPosition, figure), figure),
       figure,
     )
-    if (this.isOnBoard(nextSquare)) {
-      return nextSquare
-    }
+
+    if (!this.isOnBoard(nextSquare)) return
+    let isF = this.isFigureOnWay(nextSquare, figure)
+    if (isF === 'friend') return
+    return nextSquare
   }
 
   kingUp = (startingPosition, figure) => {

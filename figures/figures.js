@@ -1,4 +1,8 @@
-import { insertFigureInBoxesArray, removeFigureInBoxesArray } from '../board.js'
+import {
+  findFigureInBoxesArray,
+  insertFigureInBoxesArray,
+  removeFigureInBoxesArray,
+} from '../board.js'
 import Queen from './classes/Queen.js'
 import Rook from './classes/Rook.js'
 import Bishop from './classes/Bishop.js'
@@ -24,8 +28,13 @@ export const startingFigures = [
 ]
 
 export const moveFigure = (to, from, figure) => {
-  insertFigureByCoordinate(to, figure)
-  removeFigureByCoordinate(from, figure)
+  removeFigureByCoordinate(from)
+  if (findFigureInBoxesArray(to).figure) {
+    removeFigureByCoordinate(to)
+    insertFigureByCoordinate(to, figure)
+  } else {
+    insertFigureByCoordinate(to, figure)
+  }
 }
 
 function insertFigureByCoordinate(coordinate, figure) {
