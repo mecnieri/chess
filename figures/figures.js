@@ -28,7 +28,6 @@ export const moveFigure = (to, from, figure) => {
 }
 
 export function insertFigureByCoordinate(coordinate, figure) {
-  console.log(figure)
   insertFigureInBoxesArray(coordinate, figure)
   insertFigureOnBoard(coordinate, figure)
 }

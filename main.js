@@ -19,11 +19,22 @@ let selected = {
 }
 let possibles = []
 
+let whitesTurn = true
+
 function getBoxId(e) {
   clearSelected()
 
   const id = e.target.id
   const figure = findFigure(id)
+  if (figure) {
+    if (
+      !(
+        (figure.color === 'w' && whitesTurn) ||
+        (figure.color === 'b' && !whitesTurn)
+      )
+    )
+      return
+  }
   const div = document.getElementById(id)
 
   if (selected.figure === '') {
@@ -44,6 +55,7 @@ function getBoxId(e) {
 
   if (possibles.includes(id)) {
     moveFigure(id, selected.id, selected.figure)
+    whitesTurn = !whitesTurn
     if (selected.figure.name === 'pawn') {
       console.log(id)
       selected.figure.firstMoveMade()
