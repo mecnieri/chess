@@ -1,9 +1,17 @@
-import { createboardWithFigures } from './board.js'
+import { createboardWithFigures, insertFigureInBoxesArray } from './board.js'
 import { boxesArray } from './board.js'
-import { moveFigure } from './figures/figures.js'
+import {
+  figures,
+  insertFigureByCoordinate,
+  moveFigure,
+  removeFigureByCoordinate,
+} from './figures/figures.js'
 
 createboardWithFigures()
 document.querySelector('section').addEventListener('click', getBoxId)
+document.querySelector('button').addEventListener('click', turnIntoOtherFigure)
+
+let pawnFinishedSquare = ''
 
 let selected = {
   id: '',
@@ -40,7 +48,8 @@ function getBoxId(e) {
       console.log(id)
       selected.figure.firstMoveMade()
       if (id[1] === '8' || id[1] === '1') {
-        chooseFigure()
+        pawnFinishedSquare = { id, color: selected.figure.color }
+        displayLabelForChoosingFigure('block')
       }
     }
   }
@@ -50,8 +59,8 @@ function getBoxId(e) {
   }
 }
 
-function chooseFigure() {
-  console.log('figure')
+function displayLabelForChoosingFigure(param) {
+  document.querySelector('label').style.display = param
 }
 
 function clearSelected() {
@@ -65,3 +74,13 @@ function clearSelected() {
 }
 
 const findFigure = id => boxesArray.find(box => box.coordinate === id).figure
+
+function turnIntoOtherFigure() {
+  let selectedFig = document.querySelector('select').value
+  let sel = figures[pawnFinishedSquare.color + selectedFig]()
+  removeFigureByCoordinate(pawnFinishedSquare.id)
+  insertFigureByCoordinate(pawnFinishedSquare.id, sel)
+  displayLabelForChoosingFigure('none')
+}
+
+// turnIntoOtherFigure()

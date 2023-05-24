@@ -2,7 +2,7 @@ import { findFigureInBoxesArray } from '../board.js'
 
 export class Movements {
   constructor() {
-    this.row = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+    this.column = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
     this.direction = this.direction.bind(this)
     this.possibles = []
   }
@@ -16,7 +16,7 @@ export class Movements {
 
   checkNext = (currentPosition, func, color) => {
     let nextSquare = func(currentPosition, color)
-    if (!this.isOnBoard(nextSquare, this.row)) return
+    if (!this.isOnBoard(nextSquare, this.column)) return
     let isF = this.isFigureOnWay(nextSquare, color)
     if (isF === 'friend') return
     if (isF === 'enemy') return this.possibles.push(nextSquare)
@@ -230,12 +230,13 @@ export class Movements {
     )
   }
   left = currentPosition => {
-    let left = this.row[this.row.findIndex(el => el === currentPosition[0]) - 1]
+    let left =
+      this.column[this.column.findIndex(el => el === currentPosition[0]) - 1]
     return left + currentPosition[1]
   }
   right = currentPosition => {
     let right =
-      this.row[this.row.findIndex(el => el === currentPosition[0]) + 1]
+      this.column[this.column.findIndex(el => el === currentPosition[0]) + 1]
     return right + currentPosition[1]
   }
   upRight = (currentPosition, figure) => {
@@ -256,7 +257,7 @@ export class Movements {
 
   isOnBoard = nextSquare => {
     return (
-      this.row.includes(nextSquare[0]) &&
+      this.column.includes(nextSquare[0]) &&
       nextSquare[1] >= 1 &&
       nextSquare[1] <= 8
     )

@@ -55,3 +55,7 @@ section > div > span {
   -ms-border-radius: 75px;
   -o-border-radius: 75px;
 }
+
+label {
+  display: none;
+}

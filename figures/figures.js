@@ -43,7 +43,8 @@ export const moveFigure = (to, from, figure) => {
   }
 }
 
-function insertFigureByCoordinate(coordinate, figure) {
+export function insertFigureByCoordinate(coordinate, figure) {
+  console.log(figure)
   insertFigureInBoxesArray(coordinate, figure)
   insertFigureOnBoard(coordinate, figure)
 }
@@ -51,7 +52,7 @@ function insertFigureByCoordinate(coordinate, figure) {
 function insertFigureOnBoard(coordinate, figure) {
   document.getElementById(coordinate).innerHTML += figure.icon
 }
-function removeFigureByCoordinate(coordinate) {
+export function removeFigureByCoordinate(coordinate) {
   document.getElementById(coordinate).children[1].remove()
   removeFigureInBoxesArray(coordinate)
 }

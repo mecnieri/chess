@@ -1,6 +1,6 @@
 import { figuresStartingPosition } from './figures/figures.js'
 
-const rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+const columns = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
 
 export let boxesArray = []
 
@@ -13,8 +13,8 @@ function createboard() {
       if ((i % 2 === 0 && j % 2 === 1) || (i % 2 === 1 && j % 2 === 0)) {
         div.classList.add('blackbox')
       }
-      div.id = rows[j] + (8 - i)
-      boxesArray.push({ coordinate: rows[i] + (j + 1), figure: '' })
+      div.id = columns[j] + (8 - i)
+      boxesArray.push({ coordinate: columns[i] + (j + 1), figure: '' })
       div.appendChild(circle)
       document.querySelector('section').appendChild(div)
     }
