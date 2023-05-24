@@ -18,6 +18,7 @@ export const figures = {
   bBishop: () => new Bishop(icons.BBishopIcon, 'b'),
   bKnight: () => new Knight(icons.BKnightIcon, 'b'),
   wPawn: () => new Pawn(icons.WPawnIcon, 'w'),
+  bPawn: () => new Pawn(icons.BPawnIcon, 'b'),
 }
 
 export const startingFigures = [
@@ -29,6 +30,7 @@ export const startingFigures = [
   { coordinate: 'B4', figure: figures.wKing() },
   { coordinate: 'G2', figure: figures.wPawn() },
   { coordinate: 'F2', figure: figures.wPawn() },
+  { coordinate: 'A7', figure: figures.bPawn() },
 ]
 
 export const moveFigure = (to, from, figure) => {

@@ -1,6 +1,3 @@
-// check next square:
-//  is there friend piece ?
-//  is there enemy piece ?
 import { findFigureInBoxesArray } from '../board.js'
 
 export class Movements {
@@ -33,15 +30,11 @@ export class Movements {
     this.checkNextRecursivly(startingPosition, dir, color)
 
   isFigureOnWay = (square, color) => {
-    console.log(square, color)
     let fig = findFigureInBoxesArray(square).figure
-    if (fig) {
-      return fig.color === color ? 'friend' : 'enemy'
-    }
+    if (fig) return fig.color === color ? 'friend' : 'enemy'
   }
 
   knightUpRight = (startingPosition, figure) => {
-    console.log(figure)
     let nextSquare = this.up(
       this.up(this.right(startingPosition, figure), figure),
       figure,
@@ -60,7 +53,6 @@ export class Movements {
 
     if (!this.isOnBoard(nextSquare)) return
     let isF = this.isFigureOnWay(nextSquare, figure)
-    console.log(isF)
     if (isF === 'friend') return
     return nextSquare
   }
@@ -223,7 +215,6 @@ export class Movements {
     let nextSquare = this.up(this.left(startingPosition, figure), figure)
     if (!this.isOnBoard(nextSquare)) return
     let isF = this.isFigureOnWay(nextSquare, figure)
-    console.log(isF)
     if (isF === 'friend') return
     if (isF === 'enemy') return nextSquare
   }
@@ -271,5 +262,3 @@ export class Movements {
     )
   }
 }
-// is friend on way
-// is enemy on way
