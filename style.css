@@ -6,8 +6,10 @@
 
 section {
   margin: 2px;
-  width: 600px;
-  height: 600px;
+  width: 100vh;
+  height: 100vh;
+  max-width: 600px;
+  max-height: 600px;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   border: 1px solid black;
