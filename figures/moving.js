@@ -31,7 +31,7 @@ export class Movements {
 
   isFigureOnWay = (square, color) => {
     let fig = findFigureInBoxesArray(square).figure
-    if (fig) return fig.color === color ? 'friend' : 'enemy'
+     if (fig) return fig.color === color ? 'friend' : 'enemy'
   }
 
   knightUpRight = (startingPosition, figure) => {
@@ -259,7 +259,7 @@ export class Movements {
     return (
       this.column.includes(nextSquare[0]) &&
       nextSquare[1] >= 1 &&
-      nextSquare[1] <= 8
+      nextSquare.slice(1) <= 8
     )
   }
 }

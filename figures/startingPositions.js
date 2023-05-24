@@ -22,6 +22,15 @@ export const figures = {
 }
 
 export const startingFigures = [
+  { coordinate: 'A1', figure: figures.wRook() },
+  { coordinate: 'B1', figure: figures.wKnight() },
+  { coordinate: 'C1', figure: figures.wBishop() },
+  { coordinate: 'D1', figure: figures.wQueen() },
+  { coordinate: 'E1', figure: figures.wKing() },
+  { coordinate: 'F1', figure: figures.wBishop() },
+  { coordinate: 'G1', figure: figures.wKnight() },
+  { coordinate: 'H1', figure: figures.wRook() },
+
   { coordinate: 'A2', figure: figures.wPawn() },
   { coordinate: 'B2', figure: figures.wPawn() },
   { coordinate: 'C2', figure: figures.wPawn() },
@@ -30,6 +39,7 @@ export const startingFigures = [
   { coordinate: 'F2', figure: figures.wPawn() },
   { coordinate: 'G2', figure: figures.wPawn() },
   { coordinate: 'H2', figure: figures.wPawn() },
+
   { coordinate: 'A7', figure: figures.bPawn() },
   { coordinate: 'B7', figure: figures.bPawn() },
   { coordinate: 'C7', figure: figures.bPawn() },
@@ -39,23 +49,14 @@ export const startingFigures = [
   { coordinate: 'G7', figure: figures.bPawn() },
   { coordinate: 'H7', figure: figures.bPawn() },
 
-  { coordinate: 'A1', figure: figures.wRook() },
-  { coordinate: 'H1', figure: figures.wRook() },
-  { coordinate: 'B1', figure: figures.wKnight() },
-  { coordinate: 'G1', figure: figures.wKnight() },
-  { coordinate: 'C1', figure: figures.wBishop() },
-  { coordinate: 'F1', figure: figures.wBishop() },
-  { coordinate: 'D1', figure: figures.wQueen() },
-  { coordinate: 'E1', figure: figures.wKing() },
-
   { coordinate: 'A8', figure: figures.bRook() },
-  { coordinate: 'H8', figure: figures.bRook() },
   { coordinate: 'B8', figure: figures.bKnight() },
-  { coordinate: 'G8', figure: figures.bKnight() },
   { coordinate: 'C8', figure: figures.bBishop() },
-  { coordinate: 'F8', figure: figures.bBishop() },
   { coordinate: 'D8', figure: figures.bQueen() },
   { coordinate: 'E8', figure: figures.bKing() },
+  { coordinate: 'F8', figure: figures.bBishop() },
+  { coordinate: 'G8', figure: figures.bKnight() },
+  { coordinate: 'H8', figure: figures.bRook() },
 ]
 
 // export const startingFigures = [

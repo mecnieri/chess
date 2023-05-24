@@ -11,15 +11,18 @@ export default class Knight extends Movements {
       this.knightUpLeft,
       this.knightRightUp,
       this.knightRightDown,
+
       this.knightDownRight,
+      this.knightDownLeft,
       this.knightLeftUp,
       this.knightLeftDown,
-      this.knightDownLeft,
     ]
   }
   getPossibles = id => {
     let possibles = []
+    console.log(possibles)
     this.directions.forEach(direct => possibles.push(direct(id, this.color)))
+    console.log(possibles)
     return possibles
   }
 }
