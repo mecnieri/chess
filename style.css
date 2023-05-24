@@ -6,8 +6,6 @@
 
 section {
   margin: 2px;
-  width: 100vh;
-  height: 100vh;
   max-width: 600px;
   max-height: 600px;
   display: grid;

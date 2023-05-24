@@ -75,6 +75,11 @@ function getBoxId(e) {
 
 function displayLabelForChoosingFigure(param) {
   document.querySelector('label').style.display = param
+  if (param === 'block') {
+    document.querySelector('section').style.pointerEvents = 'none'
+  } else {
+    document.querySelector('section').style.pointerEvents = 'auto'
+  }
 }
 
 function clearSelected() {
@@ -96,5 +101,3 @@ function turnIntoOtherFigure() {
   insertFigureByCoordinate(pawnFinishedSquare.id, sel)
   displayLabelForChoosingFigure('none')
 }
-
-// turnIntoOtherFigure()
