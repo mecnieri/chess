@@ -1,11 +1,11 @@
 import { createboardWithFigures, insertFigureInBoxesArray } from './board.js'
 import { boxesArray } from './board.js'
 import {
-  figures,
   insertFigureByCoordinate,
   moveFigure,
   removeFigureByCoordinate,
 } from './figures/figures.js'
+import { figures } from './figures/startingPositions.js'
 
 createboardWithFigures()
 document.querySelector('section').addEventListener('click', getBoxId)
