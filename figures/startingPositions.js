@@ -57,3 +57,15 @@ export const startingFigures = [
   { coordinate: 'D8', figure: figures.bQueen() },
   { coordinate: 'E8', figure: figures.bKing() },
 ]
+
+// export const startingFigures = [
+//   { coordinate: 'E5', figure: figures.wRook() },
+//   { coordinate: 'C2', figure: figures.wRook() },
+//   { coordinate: 'H4', figure: figures.wQueen() },
+//   { coordinate: 'B7', figure: figures.bBishop() },
+//   { coordinate: 'E4', figure: figures.bKnight() },
+//   { coordinate: 'B4', figure: figures.wKing() },
+//   { coordinate: 'G2', figure: figures.wPawn() },
+//   { coordinate: 'F7', figure: figures.wPawn() },
+//   { coordinate: 'A7', figure: figures.bPawn() },
+// ]

@@ -5,17 +5,7 @@ import {
 } from '../board.js'
 import { startingFigures } from './startingPositions.js'
 
-// export const startingFigures = [
-//   { coordinate: 'E5', figure: figures.wRook() },
-//   { coordinate: 'C2', figure: figures.wRook() },
-//   { coordinate: 'H4', figure: figures.wQueen() },
-//   { coordinate: 'B7', figure: figures.bBishop() },
-//   { coordinate: 'E4', figure: figures.bKnight() },
-//   { coordinate: 'B4', figure: figures.wKing() },
-//   { coordinate: 'G2', figure: figures.wPawn() },
-//   { coordinate: 'F2', figure: figures.wPawn() },
-//   { coordinate: 'A7', figure: figures.bPawn() },
-// ]
+
 
 export const moveFigure = (to, from, figure) => {
   removeFigureByCoordinate(from)

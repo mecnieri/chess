@@ -26,7 +26,10 @@ function getBoxId(e) {
 
   const id = e.target.id
   const figure = findFigure(id)
-  if (figure) {
+
+  const div = document.getElementById(id)
+
+  if (figure && selected.figure === '') {
     if (
       !(
         (figure.color === 'w' && whitesTurn) ||
@@ -35,7 +38,6 @@ function getBoxId(e) {
     )
       return
   }
-  const div = document.getElementById(id)
 
   if (selected.figure === '') {
     selected = { id: id, figure: figure }
