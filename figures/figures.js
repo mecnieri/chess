@@ -12,23 +12,23 @@ import Pawn from './classes/Pawn.js'
 import { icons } from './icons.js'
 
 export const figures = {
-  wKing: new King(icons.WKingIcon, 'w'),
-  wQueen: new Queen(icons.WQueenIcon, 'w'),
-  wRook: new Rook(icons.WRookIcon, 'w'),
-  bBishop: new Bishop(icons.BBishopIcon, 'b'),
-  bKnight: new Knight(icons.BKnightIcon, 'b'),
-  // wPawn: new Pawn(icons.WPawnIcon, 'w'),
+  wKing: () => new King(icons.WKingIcon, 'w'),
+  wQueen: () => new Queen(icons.WQueenIcon, 'w'),
+  wRook: () => new Rook(icons.WRookIcon, 'w'),
+  bBishop: () => new Bishop(icons.BBishopIcon, 'b'),
+  bKnight: () => new Knight(icons.BKnightIcon, 'b'),
+  wPawn: () => new Pawn(icons.WPawnIcon, 'w'),
 }
 
 export const startingFigures = [
-  { coordinate: 'E5', figure: figures.wRook },
-  { coordinate: 'C2', figure: figures.wRook },
-  { coordinate: 'H4', figure: figures.wQueen },
-  { coordinate: 'B7', figure: figures.bBishop },
-  { coordinate: 'E4', figure: figures.bKnight },
-  { coordinate: 'B4', figure: figures.wKing },
-  { coordinate: 'G2', figure: new Pawn(icons.WPawnIcon, 'w'), },
-  { coordinate: 'F2', figure: new Pawn(icons.WPawnIcon, 'w'), },
+  { coordinate: 'E5', figure: figures.wRook() },
+  { coordinate: 'C2', figure: figures.wRook() },
+  { coordinate: 'H4', figure: figures.wQueen() },
+  { coordinate: 'B7', figure: figures.bBishop() },
+  { coordinate: 'E4', figure: figures.bKnight() },
+  { coordinate: 'B4', figure: figures.wKing() },
+  { coordinate: 'G2', figure: figures.wPawn() },
+  { coordinate: 'F2', figure: figures.wPawn() },
 ]
 
 export const moveFigure = (to, from, figure) => {
