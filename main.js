@@ -17,6 +17,7 @@ function getBoxId(e) {
   const id = e.target.id
   const figure = findFigure(id)
   const div = document.getElementById(id)
+  console.log(figure)
 
   if (selected.figure === '') {
     selected = { id: id, figure: figure }
@@ -36,6 +37,9 @@ function getBoxId(e) {
 
   if (possibles.includes(id)) {
     moveFigure(id, selected.id, selected.figure)
+    if (selected.figure.name === 'pawn') {
+      selected.figure.firstMoveMade()
+    }
   }
   selected = {
     id: '',

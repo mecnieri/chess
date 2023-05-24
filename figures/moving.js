@@ -187,6 +187,46 @@ export class Movements {
     if (isF === 'friend') return
     return nextSquare
   }
+  pawnUp = (startingPosition, figure) => {
+    let nextSquare = this.up(startingPosition, figure)
+    if (!this.isOnBoard(nextSquare)) return
+    let isF = this.isFigureOnWay(nextSquare, figure)
+    if (isF === 'friend') return
+    if (isF === 'enemy') return
+    return nextSquare
+  }
+  pawnDoubleUp = (startingPosition, figure) => {
+    let nextSquare = this.up(this.up(startingPosition, figure), figure)
+    if (!this.isOnBoard(nextSquare)) return
+    let isF = this.isFigureOnWay(nextSquare, figure)
+    if (isF === 'friend') return
+    if (isF === 'enemy') return
+    return nextSquare
+  }
+  pawnDoubleUp = (startingPosition, figure) => {
+    let nextSquare = this.up(this.up(startingPosition, figure), figure)
+    if (!this.isOnBoard(nextSquare)) return
+    let isF = this.isFigureOnWay(nextSquare, figure)
+    if (isF === 'friend') return
+    if (isF === 'enemy') return
+    return nextSquare
+  }
+  pawnKillsUpRight = (startingPosition, figure) => {
+    let nextSquare = this.up(this.right(startingPosition, figure), figure)
+    if (!this.isOnBoard(nextSquare)) return
+    let isF = this.isFigureOnWay(nextSquare, figure)
+
+    if (isF === 'friend') return
+    if (isF === 'enemy') return nextSquare
+  }
+  pawnKillsUpLeft = (startingPosition, figure) => {
+    let nextSquare = this.up(this.left(startingPosition, figure), figure)
+    if (!this.isOnBoard(nextSquare)) return
+    let isF = this.isFigureOnWay(nextSquare, figure)
+    console.log(isF)
+    if (isF === 'friend') return
+    if (isF === 'enemy') return nextSquare
+  }
 
   up = (currentPosition, figure) => {
     return (

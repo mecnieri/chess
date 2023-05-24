@@ -8,6 +8,7 @@ import Rook from './classes/Rook.js'
 import Bishop from './classes/Bishop.js'
 import Knight from './classes/Knight.js'
 import King from './classes/King.js'
+import Pawn from './classes/Pawn.js'
 import { icons } from './icons.js'
 
 export const figures = {
@@ -16,6 +17,7 @@ export const figures = {
   wRook: new Rook(icons.WRookIcon, 'w'),
   bBishop: new Bishop(icons.BBishopIcon, 'b'),
   bKnight: new Knight(icons.BKnightIcon, 'b'),
+  // wPawn: new Pawn(icons.WPawnIcon, 'w'),
 }
 
 export const startingFigures = [
@@ -25,6 +27,8 @@ export const startingFigures = [
   { coordinate: 'B7', figure: figures.bBishop },
   { coordinate: 'E4', figure: figures.bKnight },
   { coordinate: 'B4', figure: figures.wKing },
+  { coordinate: 'G2', figure: new Pawn(icons.WPawnIcon, 'w'), },
+  { coordinate: 'F2', figure: new Pawn(icons.WPawnIcon, 'w'), },
 ]
 
 export const moveFigure = (to, from, figure) => {
