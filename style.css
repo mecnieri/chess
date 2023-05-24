@@ -16,12 +16,6 @@ section {
   box-sizing: content-box;
 }
 
-@media only screen and (max-width: 600px) {
-  section {
-    height: 100vw;
-    width: 100vw;
-  }
-}
 section > div {
   /* width: 75px; */
   /* height: 75px; */
@@ -35,7 +29,7 @@ section > div {
 }
 
 i {
-  font-size: 7vw;
+  font-size: 3em;
   pointer-events: none;
 }
 
@@ -64,4 +58,16 @@ section > div > span {
 
 label {
   display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  section {
+    height: 100vw;
+    width: 100vw;
+  }
+}
+@media only screen and (max-width: 500px) {
+  i {
+    font-size: 1.5em;
+  }
 }
