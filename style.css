@@ -9,14 +9,22 @@ section {
   max-width: 600px;
   max-height: 600px;
   display: grid;
+  height: 600px;
   grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
   border: 1px solid black;
   box-sizing: content-box;
 }
 
+@media only screen and (max-width: 600px) {
+  section {
+    height: 100vw;
+    width: 100vw;
+  }
+}
 section > div {
-  width: 75px;
-  height: 75px;
+  /* width: 75px; */
+  /* height: 75px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,7 +35,7 @@ section > div {
 }
 
 i {
-  font-size: 50px;
+  font-size: 7vw;
   pointer-events: none;
 }
 
@@ -45,8 +53,8 @@ section > div > span {
   pointer-events: none;
   width: 20px;
   height: 20px;
-  border-radius: 75px;
   opacity: 0.5;
+  border-radius: 75px;
   background-color: rebeccapurple;
   -webkit-border-radius: 75px;
   -moz-border-radius: 75px;
