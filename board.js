@@ -20,6 +20,10 @@ function createboard() {
     }
   }
 }
+
+export const findFigureInBoxesArray = coordinate =>
+  boxesArray.find(el => el.coordinate === coordinate).figure
+
 export const removeFigureInBoxesArray = coordinate => {
   boxesArray.map(el => (el.coordinate === coordinate ? (el.figure = '') : el))
 }
@@ -33,6 +37,3 @@ export function createboardWithFigures() {
   createboard()
   figuresStartingPosition()
 }
-
-export const findFigureInBoxesArray = coordinate =>
-  boxesArray.find(el => el.coordinate === coordinate)

@@ -30,7 +30,7 @@ export class Movements {
     this.checkNextRecursivly(startingPosition, dir, color)
 
   isFigureOnWay = (square, color) => {
-    let fig = findFigureInBoxesArray(square).figure
+    let fig = findFigureInBoxesArray(square)
      if (fig) return fig.color === color ? 'friend' : 'enemy'
   }
 

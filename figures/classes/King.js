@@ -1,3 +1,4 @@
+import { findFigureInBoxesArray } from '../../board.js'
 import { Movements } from '../moving.js'
 
 export default class King extends Movements {
@@ -5,6 +6,7 @@ export default class King extends Movements {
     super()
     this.icon = icon
     this.color = color
+    this.alreadyMoved = false
     this.directions = [
       this.kingUp,
       this.kingDown,
@@ -15,6 +17,9 @@ export default class King extends Movements {
       this.kingDownRight,
       this.kingDownLeft,
     ]
+  }
+  checkCastle = () => {
+    findFigureInBoxesArray()
   }
   getPossibles = id => {
     let possibles = []

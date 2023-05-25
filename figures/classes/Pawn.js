@@ -3,8 +3,10 @@ import { Movements } from '../moving.js'
 export default class Pawn extends Movements {
   constructor(icon, color) {
     super()
+    this.name = 'pawn'
     this.icon = icon
     this.color = color
+    this.isItFirstMove = true
     this.directionsFirst = [
       this.pawnUp,
       this.pawnDoubleUp,
@@ -16,8 +18,6 @@ export default class Pawn extends Movements {
       this.pawnKillsUpRight,
       this.pawnKillsUpLeft,
     ]
-    this.isItFirstMove = true
-    this.name = 'pawn'
   }
   firstMoveMade = () => (this.isItFirstMove = false)
   getPossibles = id => {

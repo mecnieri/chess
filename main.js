@@ -1,5 +1,4 @@
-import { createboardWithFigures, insertFigureInBoxesArray } from './board.js'
-import { boxesArray } from './board.js'
+import { createboardWithFigures, findFigureInBoxesArray } from './board.js'
 import {
   insertFigureByCoordinate,
   moveFigure,
@@ -25,7 +24,7 @@ function getBoxId(e) {
   clearSelected()
 
   const id = e.target.id
-  const figure = findFigure(id)
+  const figure = findFigureInBoxesArray(id)
 
   const div = document.getElementById(id)
 
@@ -92,7 +91,8 @@ function clearSelected() {
   )
 }
 
-const findFigure = id => boxesArray.find(box => box.coordinate === id).figure
+// const findFigure = id => boxesArray.find(box => box.coordinate === id).figure
+// const findFigureInBoxesArray = id => boxesArray.find(box => box.coordinate === id).figure
 
 function turnIntoOtherFigure() {
   let selectedFig = document.querySelector('select').value

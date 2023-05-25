@@ -5,11 +5,9 @@ import {
 } from '../board.js'
 import { startingFigures } from './startingPositions.js'
 
-
-
 export const moveFigure = (to, from, figure) => {
   removeFigureByCoordinate(from)
-  if (findFigureInBoxesArray(to).figure) {
+  if (findFigureInBoxesArray(to)) {
     removeFigureByCoordinate(to)
     insertFigureByCoordinate(to, figure)
   } else {
