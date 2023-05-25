@@ -5,7 +5,7 @@
 }
 
 section {
-  margin: 2px;
+  margin: 2px auto;
   max-width: 600px;
   max-height: 600px;
   display: grid;
@@ -65,9 +65,7 @@ label {
     height: 100vw;
     width: 100vw;
   }
-}
-@media only screen and (max-width: 500px) {
   i {
-    font-size: 1.5em;
+    font-size: 8vw;
   }
 }
