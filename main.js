@@ -6,9 +6,13 @@ import {
 } from './figures/figures.js'
 import { figures } from './figures/startingPositions.js'
 
+import {
+  clearSelectedCircles,
+  displayLabelForChoosingFigure,
+} from './helpers/helpers.js'
+
 createboardWithFigures()
 document.querySelector('section').addEventListener('click', getBoxId)
-document.querySelector('button').addEventListener('click', turnIntoOtherFigure)
 
 let pawnFinishedSquare = ''
 
@@ -21,7 +25,7 @@ let possibles = []
 let whitesTurn = true
 
 function getBoxId(e) {
-  clearSelected()
+  clearSelectedCircles()
 
   const id = e.target.id
   const figure = findFigureInBoxesArray(id)
@@ -56,9 +60,8 @@ function getBoxId(e) {
 
   if (possibles.includes(id)) {
     moveFigure(id, selected.id, selected.figure)
-    whitesTurn = !whitesTurn
+    // whitesTurn = !whitesTurn
     if (selected.figure.name === 'pawn') {
-      console.log(id)
       selected.figure.firstMoveMade()
       if (id[1] === '8' || id[1] === '1') {
         pawnFinishedSquare = { id, color: selected.figure.color }
@@ -72,29 +75,11 @@ function getBoxId(e) {
   }
 }
 
-function displayLabelForChoosingFigure(param) {
-  document.querySelector('label').style.display = param
-  if (param === 'block') {
-    document.querySelector('section').style.pointerEvents = 'none'
-  } else {
-    document.querySelector('section').style.pointerEvents = 'auto'
-  }
-}
+document
+  .querySelector('button')
+  .addEventListener('click', turnPawnIntoOtherFigure)
 
-function clearSelected() {
-  document
-    .querySelectorAll('span')
-    .forEach(circle => (circle.style = 'display:none'))
-
-  Array.from(document.querySelector('section').children).forEach(div =>
-    div.classList.remove('selectedBox'),
-  )
-}
-
-// const findFigure = id => boxesArray.find(box => box.coordinate === id).figure
-// const findFigureInBoxesArray = id => boxesArray.find(box => box.coordinate === id).figure
-
-function turnIntoOtherFigure() {
+function turnPawnIntoOtherFigure() {
   let selectedFig = document.querySelector('select').value
   let sel = figures[pawnFinishedSquare.color + selectedFig]()
   removeFigureByCoordinate(pawnFinishedSquare.id)
