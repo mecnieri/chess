@@ -4,7 +4,7 @@ import {
   removeFigureInBoxesArray,
 } from '../board.js'
 
-import { startingFigures, figures } from './startingPositions.js'
+import { startingFigures } from './startingPositions.js'
 
 export const moveFigure = (to, from, figure) => {
   removeFigureByCoordinate(from)
@@ -37,5 +37,4 @@ export function figuresStartingPosition() {
     )
   }
 }
-
 
