@@ -60,7 +60,7 @@ function getBoxId(e) {
 
   if (possibles.includes(id)) {
     moveFigure(id, selected.id, selected.figure)
-    // whitesTurn = !whitesTurn
+    whitesTurn = !whitesTurn
     if (selected.figure.name === 'pawn') {
       selected.figure.firstMoveMade()
       if (id[1] === '8' || id[1] === '1') {
